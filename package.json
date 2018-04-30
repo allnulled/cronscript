@@ -1,0 +1,29 @@
+{
+  "name": "cronscript",
+  "version": "1.0.0",
+  "description": "Schedule your time through cron expressions and desktop notifications.",
+  "main": "src/cronscript.js",
+  "directories": {
+    "test": "test"
+  },
+  "bin": {
+    "cst": "bin/cronscript.cli.js"
+  },
+  "scripts": {
+    "watchfile": "node bin/cronscript.cli.js -f test/sample1.cst",
+    "compile": "node node_modules/.bin/pegjs src/cronscript.pegjs",
+    "test": "npm run compile && node test/cronscript-spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "pegjs": "^0.10.0"
+  },
+  "dependencies": {
+    "chokidar": "^2.0.3",
+    "desknotify": "^1.0.8",
+    "execute-command-sync": "^1.0.2",
+    "fecha": "^2.3.3",
+    "node-cron": "^1.2.1"
+  }
+}
